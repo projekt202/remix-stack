@@ -47,13 +47,13 @@ async function main({ rootDirectory }) {
   await Promise.all([
     fs.writeFile(
       APP_ARC_PATH,
-      appArc.replace("grunge-stack-template", APP_NAME)
+      appArc.replace("p202-stack-template", APP_NAME)
     ),
     fs.writeFile(ENV_PATH, newEnv),
     fs.writeFile(PACKAGE_JSON_PATH, newPackageJson),
     fs.writeFile(
       README_PATH,
-      readme.replace(new RegExp("RemixGrungeStack", "g"), toLogicalID(APP_NAME))
+      readme.replace(new RegExp("RemixP202Stack", "g"), toLogicalID(APP_NAME))
     ),
     fs.copyFile(
       path.join(rootDirectory, "remix.init", "gitignore"),

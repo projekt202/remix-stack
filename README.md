@@ -1,11 +1,11 @@
-# Remix Grunge Stack
+# projekt202 Remix Stack
 
-![The Remix Grunge Stack](https://repository-images.githubusercontent.com/463325363/edae4f5b-1a13-47ea-b90c-c05badc2a700)
+![The projekt202 Remix Stack](https://repository-images.githubusercontent.com/463325363/edae4f5b-1a13-47ea-b90c-c05badc2a700)
 
 Learn more about [Remix Stacks](https://remix.run/stacks).
 
 ```
-npx create-remix --template remix-run/grunge-stack
+npx create-remix --template codePlanet/p202-stack
 ```
 
 ## What's in the stack
@@ -78,7 +78,7 @@ Prior to your first deployment, you'll need to do a few things:
 
 You can find the CloudFormation template that Architect generated for you in the sam.yaml file.
 
-To find it on AWS, you can search for [CloudFormation](https://console.aws.amazon.com/cloudformation/home) (make sure you're looking at the correct region!) and find the name of your stack (the name is a PascalCased version of what you have in `app.arc`, so by default it's RemixGrungeStackStaging and RemixGrungeStackProduction) that matches what's in `app.arc`, you can find all of your app's resources under the "Resources" tab.
+To find it on AWS, you can search for [CloudFormation](https://console.aws.amazon.com/cloudformation/home) (make sure you're looking at the correct region!) and find the name of your stack (the name is a PascalCased version of what you have in `app.arc`, so by default it's RemixP202StackStaging and RemixP202StackProduction) that matches what's in `app.arc`, you can find all of your app's resources under the "Resources" tab.
 
 ## GitHub Actions
 
