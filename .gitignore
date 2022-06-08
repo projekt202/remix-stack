@@ -19,3 +19,5 @@ sam.yaml
 /cypress/videos
 
 /app/styles/tailwind.css
+
+.idea
