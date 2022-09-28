@@ -7,17 +7,12 @@ pnpm-lock.yml
 
 node_modules
 
-/server/index.js
-/server/index.js.map
+/build
 /public/build
-preferences.arc
-sam.json
-sam.yaml
 .env
 
 /cypress/screenshots
 /cypress/videos
-
-/app/styles/tailwind.css
+/postgres-data
 
 .idea
