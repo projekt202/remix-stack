@@ -190,8 +190,6 @@ const main = async ({ isTypeScript, packageManager, rootDirectory }) => {
   } catch (error) {
   }
 
-  execSync('mv .github ..')
-
   await askSetupQuestions({ packageManager, rootDirectory }).catch((error) => {
     if (error.isTtyError) {
       // Prompt couldn't be rendered in the current environment
