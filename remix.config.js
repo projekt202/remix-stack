@@ -8,7 +8,7 @@ module.exports = {
   cacheDirectory: "./node_modules/.cache/remix",
   assetsBuildDirectory: "public/build",
   publicPath: "/_static/build/",
-  serverBuildTarget: "arc",
+  serverBuildTarget: "node-cjs",
   server: "./server.ts",
   ignoredRouteFiles: ["**/.*", "**/*.css", "**/*.test.{js,jsx,ts,tsx}"],
   routes(defineRoutes) {
