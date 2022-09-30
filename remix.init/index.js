@@ -41,7 +41,7 @@ const getPackageManagerCommand = (packageManager) =>
       exec: 'npx',
       lockfile: 'package-lock.json',
       run: (script, args) => `npm run ${script} ${args ? `-- ${args}` : ''}`,
-      install: (name, args) => `npm install ${args ? args : ''}${name}`,
+      install: (name, args) => `npm install ${args ? args : ''} ${name}`,
     }),
     pnpm: () => {
       const pnpmVersion = getPackageManagerVersion('pnpm');
