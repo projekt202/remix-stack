@@ -200,6 +200,8 @@ const main = async ({ isTypeScript, packageManager, rootDirectory }) => {
 };
 
 async function askSetupQuestions({ packageManager, rootDirectory }) {
+  const execInProject = (command) => execSync(command, { cwd: rootDirectory, stdio: 'inherit' });
+
   const answers = await inquirer.prompt([
     {
       name: 'amplify',
@@ -219,18 +221,18 @@ async function askSetupQuestions({ packageManager, rootDirectory }) {
   if (answers.amplify) {
     if (answers.cli) {
       console.log('Installing CLI globally');
-      execSync(pm.install('@aws-amplify/cli', '-g'))
+      execInProject(pm.install('@aws-amplify/cli', '-g'))
     }
 
     console.log('Installing amplify in project');
-    execSync(pm.install('aws-amplify'));
+    execInProject(pm.install('aws-amplify'));
     console.log('Amplify npm package has been installed.');
 
     console.log('In order to proceed, you will need an AWS account. If you do not have one, you will be able to create one.')
-    execSync('npx amplify configure', { stdio: 'inherit' });
+    execInProject('npx amplify configure');
 
     console.log('Initializing amplify project');
-    execSync('npx amplify init', { stdio: 'inherit' });
+    execInProject('npx amplify init');
   }
 
 
@@ -248,7 +250,7 @@ async function askSetupQuestions({ packageManager, rootDirectory }) {
     console.log(
       `Running the validate script to make sure everything was set up properly`
     );
-    execSync(pm.run('validate'), { cwd: rootDirectory, stdio: 'inherit' });
+    execInProject(pm.run('validate'));
   }
 
   console.log(
