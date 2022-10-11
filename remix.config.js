@@ -8,7 +8,7 @@ module.exports = {
   cacheDirectory: "./node_modules/.cache/remix",
   assetsBuildDirectory: "public/build",
   publicPath: "/_static/build/",
-  serverBuildTarget: "node-cjs",
+  serverBuildTarget: "arc",
   server: "./server.ts",
   ignoredRouteFiles: ["**/.*", "**/*.css", "**/*.test.{js,jsx,ts,tsx}"],
   routes(defineRoutes) {
@@ -16,9 +16,12 @@ module.exports = {
       if (process.env.NODE_ENV === "production") return;
 
       console.log("⚠️  Test routes enabled.");
+
+      let appDir = path.join(__dirname, "app");
+
       route(
         "__tests/create-user",
-        path.join(__dirname, "cypress/support/test-routes/create-user.ts")
+        path.relative(appDir, "cypress/support/test-routes/create-user.ts")
       );
     });
   },

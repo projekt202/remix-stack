@@ -1,11 +1,11 @@
-# projekt202 Remix Stack
+# Remix Stack
 
-![The projekt202 Remix Stack](https://repository-images.githubusercontent.com/463325363/edae4f5b-1a13-47ea-b90c-c05badc2a700)
+![The Remix Stack](https://repository-images.githubusercontent.com/463325363/edae4f5b-1a13-47ea-b90c-c05badc2a700)
 
 Learn more about [Remix Stacks](https://remix.run/stacks).
 
 ```
-npx create-remix --template codePlanet/p202-stack
+npx create-remix@latest --template projekt202/remix-stack
 ```
 
 ## What's in the stack
@@ -26,6 +26,12 @@ npx create-remix --template codePlanet/p202-stack
 Not a fan of bits of the stack? Fork it, change it, and use `npx create-remix --template your/repo`! Make it your own.
 
 ## Development
+
+- This step only applies if you've opted out of having the CLI install dependencies for you:
+
+   ```sh
+   npx remix init
+   ```
 
 - Validate the app has been set up properly (optional):
 
@@ -78,7 +84,7 @@ Prior to your first deployment, you'll need to do a few things:
 
 You can find the CloudFormation template that Architect generated for you in the sam.yaml file.
 
-To find it on AWS, you can search for [CloudFormation](https://console.aws.amazon.com/cloudformation/home) (make sure you're looking at the correct region!) and find the name of your stack (the name is a PascalCased version of what you have in `app.arc`, so by default it's RemixP202StackStaging and RemixP202StackProduction) that matches what's in `app.arc`, you can find all of your app's resources under the "Resources" tab.
+To find it on AWS, you can search for [CloudFormation](https://console.aws.amazon.com/cloudformation/home) (make sure you're looking at the correct region!) and find the name of your stack (the name is a PascalCased version of what you have in `app.arc`, so by default it's RemixStackStaging and RemixGrungeStackProduction) that matches what's in `app.arc`, you can find all of your app's resources under the "Resources" tab.
 
 ## GitHub Actions
 
@@ -100,16 +106,6 @@ We have a utility for testing authenticated features without having to go throug
 cy.login();
 // you are now logged in as a new user
 ```
-
-We also have a utility to auto-delete the user at the end of your test. Just make sure to add this in each test file:
-
-```ts
-afterEach(() => {
-  cy.cleanupUser();
-});
-```
-
-That way, we can keep your local db clean and keep your tests isolated from one another.
 
 ### Vitest
 
