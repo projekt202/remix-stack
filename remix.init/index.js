@@ -172,7 +172,7 @@ const main = async ({ isTypeScript, packageManager, rootDirectory }) => {
       path.join(rootDirectory, "remix.init", "gitignore"),
       path.join(rootDirectory, ".gitignore")
     ),
-    fs.rename(path.join(rootDirectory, "github", ".github")),
+    fs.rename(path.join(rootDirectory, "github"), path.join(rootDirectory, ".github")),
   ];
 
   if (!isTypeScript) {

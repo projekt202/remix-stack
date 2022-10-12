@@ -1,5 +1,9 @@
 @app
-remix-stack-template
+tech-compare
+
+@aws
+region us-east-1
+profile default
 
 @http
 /*
